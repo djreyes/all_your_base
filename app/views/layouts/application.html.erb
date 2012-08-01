@@ -23,8 +23,10 @@
           <%= render :partial => 'layouts/sidebar' %>
         </div>
         <div class="span9">
-          <%= render :partial => 'layouts/flashes' %>
-          <%= yield %>
+          <div class="hero-unit">
+            <%= render :partial => 'layouts/flashes' %>
+            <%= yield %>
+          </div>
         </div>
       </div><!--/row-->
 
