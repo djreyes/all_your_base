@@ -6,6 +6,7 @@ describe "Shared pages" do
   describe "home page" do
     before { visit root_path }
 
+    it { should have_selector('a', text: 'AllYourBase') }
     it { should have_selector('a', text: 'Sign up') }
     it { should have_selector('a', text: 'Sign in') }
     it { should have_selector('a', text: 'Sign out') }
