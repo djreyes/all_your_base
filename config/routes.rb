@@ -3,7 +3,9 @@ AllYourBase::Application.routes.draw do
 
   root :to => "temp#home"
 
-  resources :projects
+  resources :projects do
+    resources :todos
+  end
 
 
   # The priority is based upon order of creation:

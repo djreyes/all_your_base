@@ -9,5 +9,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
-  has_many :projects, :foreign_key => :owner_id
+  has_many :projects, foreign_key: :owner_id
+  has_many :todos, foreign_key: :created_by_id
 end

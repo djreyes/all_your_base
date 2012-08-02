@@ -65,4 +65,22 @@ describe "Project pages" do
       end
     end
   end
+
+  describe "projects#show" do
+    describe "when logged out" do
+
+    end
+
+    describe "when logged in" do
+      before do
+        visit new_user_session_path
+        fill_in "Email", with: user.email
+        fill_in "Password", with: user.password
+        click_button "Sign in"
+        visit project_path(1)
+      end
+
+      it { should have_content("Project Todos") }
+    end
+  end
 end
