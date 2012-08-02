@@ -32,4 +32,27 @@ describe "Todo Pages" do
       end
     end
   end
+
+  describe "todo#show" do
+    let(:todo) { Fabricate(:todo) }
+
+    describe "when logged out" do
+      before { visit project_path(todo.project) }
+
+      it { should have_content("Sign in") }
+    end
+
+    describe "when logged in" do
+      before do
+        visit new_user_session_path
+        fill_in "Email", with: user.email
+        fill_in "Password", with: user.password
+        click_button "Sign in"
+        visit project_todo_path(todo.project, todo)
+      end
+
+      it { should have_content("Add Task") }
+
+    end
+  end
 end

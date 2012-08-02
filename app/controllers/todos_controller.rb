@@ -1,6 +1,10 @@
 class TodosController < ApplicationController
   before_filter :confirm_signed_in
 
+  def show
+    @todo = Todo.find(params[:id])
+  end
+
   def new
     @project = Project.find(params[:project_id])
     @todo = @project.todos.new

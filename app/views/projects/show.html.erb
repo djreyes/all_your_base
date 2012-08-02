@@ -1,0 +1,18 @@
+<div class="row-fluid">
+  <div class="span3">
+    <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+        <li><%= link_to "Add Project Todo", new_project_todo_path(@project) %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="span9">
+    <h2><%= @project.name %></h2>
+    <h3><%= @project.description %></h3>
+    <ul class="nav nav-list projects">
+    <% @project.todos.each do |todo| %>
+        <li class="well sidebar-nav"><p><%= todo.name %></p>created at <%= todo.created_at %></li>
+    <% end %>
+    </ul>
+  </div>
+</div>

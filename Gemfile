@@ -21,6 +21,7 @@ group :development, :test do
   gem 'fabrication'
   gem 'guard-rspec'
   gem 'shoulda-matchers'
+  gem 'launchy'
 end
 
 group :production do

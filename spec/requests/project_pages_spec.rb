@@ -67,8 +67,12 @@ describe "Project pages" do
   end
 
   describe "projects#show" do
-    describe "when logged out" do
+    let(:project) { Fabricate(:project, name: "Can you see me now?", owner_id: user.id) }
 
+    describe "when logged out" do
+      before { visit project_path(project.id) }
+
+      it { should have_content("Sign in") }
     end
 
     describe "when logged in" do
@@ -77,10 +81,12 @@ describe "Project pages" do
         fill_in "Email", with: user.email
         fill_in "Password", with: user.password
         click_button "Sign in"
-        visit project_path(1)
+        visit project_path(project.id)
       end
 
-      it { should have_content("Project Todos") }
+      it { should have_content("Can you see me now?") }
+      it { should have_content(project.description) }
+      it { should have_content('Add Project Todo') }
     end
   end
 end

@@ -16,6 +16,10 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
 
+  def show
+    @project = Project.find(params[:id])
+  end
+
   private
     def confirm_signed_in
       if !user_signed_in?
