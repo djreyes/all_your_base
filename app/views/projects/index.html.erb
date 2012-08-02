@@ -8,9 +8,11 @@
   </div>
   <div class="span9">
     <h2>Projects</h2>
-    <ul>
+    <ul class="nav nav-list projects">
     <% @projects.each do |project| %>
-      <li><p><%= project.name %></p><%= project.description %></li>
+		<!-- <div > -->
+	      <li class="well sidebar-nav"><p><%= project.name %></p><%= project.description %></li>
+		<!-- </div> -->
     <% end %>
     </ul>
   </div>

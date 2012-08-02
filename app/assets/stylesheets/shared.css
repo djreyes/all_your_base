@@ -7,6 +7,13 @@
 	float: right;
 }*/
 
-.navbar .nav li a, a:hover {
+/*.navbar .nav li a, a:hover {
 	padding: 0px;
+}
+*/
+.projects {
+	width: 25%;
+	padding-left: 0px;
+	padding-top: 2%;
+	float: left;
 }
