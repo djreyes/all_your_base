@@ -1,4 +1,3 @@
-<% if flash[:notice] || flash[:alert] %>
-  <p class="notice"><%= flash[:notice] %></p>
-  <p class="alert"><%= flash[:alert] %></p>
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "alert" %> <!-- Need to customize flashes from devise so we can do alert-#{name} -->
 <% end %>

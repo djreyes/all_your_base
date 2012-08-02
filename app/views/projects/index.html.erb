@@ -1,9 +1,17 @@
-<h2>Projects</h2>
-
-<%= link_to "Add Project", new_project_path %>
-
-<ul>
-<% @projects.each do |project| %>
-  <li><p><%= project.name %></p><%= project.description %></li>
-<% end %>
-</ul>
+<div class="row-fluid">
+  <div class="span3">
+    <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+        <li><%= link_to "Add Project", new_project_path %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="span9">
+    <h2>Projects</h2>
+    <ul>
+    <% @projects.each do |project| %>
+      <li><p><%= project.name %></p><%= project.description %></li>
+    <% end %>
+    </ul>
+  </div>
+</div>
