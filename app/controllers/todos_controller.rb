@@ -14,7 +14,7 @@ class TodosController < ApplicationController
     @project = Project.find(params[:project_id])
     @todo = @project.todos.new(params[:todo])
     @todo.save
-    redirect_to projects_path
+    redirect_to project_path(@project)
   end
 
   private

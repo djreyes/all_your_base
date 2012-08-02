@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe "Todo Pages" do
   subject { page }
-  let(:project) { Fabricate(:project) }
   let(:user) { Fabricate(:user) }
+  let(:project) { Fabricate(:project, owner_id: user.id) }
 
   describe "todo#new" do
     describe "when logged out" do
@@ -14,7 +14,7 @@ describe "Todo Pages" do
     describe "when logged in" do
       before do
         visit new_user_session_path
-        fill_in "Email", with: user.email
+        fill_in "Email", with:  user.email
         fill_in "Password", with: user.password
         click_button "Sign in"
         visit new_project_todo_path(project.id)
@@ -53,6 +53,37 @@ describe "Todo Pages" do
 
       it { should have_content("Add Task") }
 
+      describe "navigating to new tasks" do
+
+        before { click_link "Add Task" }
+
+        it { should have_content("Description") }
+        it { should have_button("Create Task") }
+
+        describe "creates a new task for the todo list" do
+          before do
+            fill_in "Description", with: "Holey Moley Guacamole"
+          end
+          it "with success" do
+            expect { click_button "Create Task" }.to change(Task, :count).by(1)
+          end
+        end
+
+      end
+
+      describe "viewing existing tasks" do
+        before do
+          click_link "Add Task"
+          fill_in "Description", with: "Holey Moley Guacamole"
+          click_button "Create Task"
+          click_link "Add Task"
+          fill_in "Description", with: "Hit it again!"
+          click_button "Create Task"
+        end
+
+        it { should have_content("Holey Moley Guacamole") }
+        it { should have_content("Hit it again!") }
+      end
     end
   end
 end

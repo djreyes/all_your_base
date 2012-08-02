@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Todo do
   let(:project) { Fabricate(:project) }
 
+  it { should have_many(:tasks) }
   it { should respond_to(:name) }
   it { should belong_to(:user) }
   it { should belong_to(:project) }

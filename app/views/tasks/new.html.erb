@@ -1,0 +1,12 @@
+<p>Create a Task</p>
+
+<%= form_for @todo.tasks.new do |f| %>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </p>
+  <%= f.hidden_field :todo_id, value: @todo.id %>
+  <%= f.hidden_field :created_by_id, value: current_user.id %>
+
+  <%= f.submit :class => "btn btn-primary" %>
+<% end %>

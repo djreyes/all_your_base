@@ -10,5 +10,8 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :projects, foreign_key: :owner_id
-  has_many :todos, foreign_key: :created_by_id
+  # has_many :todos, foreign_key: :owner_id
+
+  has_many :tasks, foreign_key: :created_by_id
+  has_many :tasks, foreign_key: :assigned_to_id
 end

@@ -6,6 +6,7 @@ class Todo < ActiveRecord::Base
 
   belongs_to :user, foreign_key: :created_by_id
   belongs_to :project
+  has_many :tasks
 
   private
     def todo_owner_and_project_are_same

@@ -1,19 +1,20 @@
 /*.navbar .nav li {
-	padding-top: 4%;
+    padding-top: 4%;
 }
 
 .navbar .nav li a, a:hover {
-	padding: 0%;
-	float: right;
+    padding: 0%;
+    float: right;
 }*/
 
 /*.navbar .nav li a, a:hover {
-	padding: 0px;
+    padding: 0px;
 }
 */
 .projects {
-	width: 25%;
-	padding-left: 0px;
-	padding-top: 2%;
-	float: left;
+    width: 25%;
+    padding-left: 0px;
+    padding-top: 2%;
+    float: left;
 }
+

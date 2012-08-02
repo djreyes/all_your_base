@@ -3,3 +3,8 @@ Fabricator(:project) do
   description { Faker::Lorem.sentence(4) }
   owner_id { Fabricate(:user) }
 end
+
+
+# Fabricator(:project_with_todo, from: :project) do
+#     todo { Fabricate(:todo, created_by_id: 1) }
+# end

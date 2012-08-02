@@ -11,7 +11,7 @@
     <h3><%= @project.description %></h3>
     <ul class="nav nav-list projects">
     <% @project.todos.each do |todo| %>
-        <li class="well sidebar-nav"><p><%= todo.name %></p>created at <%= todo.created_at %></li>
+        <li class="well sidebar-nav"><p><%= link_to todo.name, project_todo_path(@project, todo) %></p>created at <%= todo.created_at %></li>
     <% end %>
     </ul>
   </div>

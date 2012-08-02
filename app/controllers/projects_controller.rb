@@ -18,12 +18,20 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    confirm_owner
   end
 
   private
     def confirm_signed_in
       if !user_signed_in?
         redirect_to new_user_session_path
+      end
+    end
+
+    def confirm_owner
+      if @project.owner_id != current_user.id
+        flash[:error] = "You don't have permission to view that project"
+        redirect_to projects_path
       end
     end
 end

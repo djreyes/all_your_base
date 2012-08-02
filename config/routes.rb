@@ -7,6 +7,7 @@ AllYourBase::Application.routes.draw do
     resources :todos
   end
 
+  resources :tasks
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
