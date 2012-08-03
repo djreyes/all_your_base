@@ -9,7 +9,7 @@ describe Project do
   it { should respond_to(:name) }
   it { should respond_to(:description) }
   it { should belong_to(:user) }
-  # it { should have_many(:users).through(:project_users) }
+  it { should have_many(:users).through(:project_users) }
 
   it "should throw an error if a project doesn't have an owner, name, and description" do
     expect { Project.create }.should raise_error

@@ -6,6 +6,8 @@ describe User do
 
   it { should respond_to(:email) }
   it { should have_many(:projects) }
+  it { should have_many(:projects).through(:project_users) }
+
 
   it "should throw an error if a user doesn't have an email and password" do
     expect { User.create }.should raise_error
