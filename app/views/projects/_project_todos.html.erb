@@ -1,7 +1,6 @@
 <h2><%= project.name %></h2>
-<h3><%= project.description %></h3>
-<ul class="nav nav-list projects">
+<ul class="nav nav-list">
     <% project.todos.each do |todo| %>
-      <li class="well sidebar-nav"><p><%= link_to todo.name, project_todo_path(project, todo) %></p>created at <%= todo.created_at %></li>
+      <div class="well sidebar-nav blocks"><p><%= link_to todo.name, project_todo_path(project, todo) %></p>created at <%= todo.created_at %></div>
   <% end %>
 </ul>

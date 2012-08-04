@@ -1,8 +1,8 @@
 <h2><%= @todo.name %></h2>
-<ul class="nav nav-list projects">
+<ul class="nav nav-list">
   <% @todo.tasks.each do |task| %>
       <% if !task.description.nil? %>
-        <li class="well sidebar-nav"><p><%= task.description  %></p>created at <%= task.created_at %></li>
+        <div class="well sidebar-nav blocks"><p><%= task.description  %></p>created at <%= task.created_at %></div>
       <% end %>
   <% end %>
 </ul>
