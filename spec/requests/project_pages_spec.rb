@@ -99,14 +99,14 @@ describe "Project pages" do
 
       it { should have_content("Can you see me now?") }
       it { should have_content(project.description) }
-      it { should have_content('Add Project Todo') }
+      it { should have_content('Add Todo') }
 
       describe "clicking on todos" do
         let(:project) { Fabricate(:project, name: "Can you see me now?", owner_id: user.id) }
 
         before do
           visit project_path(project.id)
-          click_link "Add Project Todo"
+          click_link "Add Todo"
           fill_in "Name", with: "Tommy likey, tommy want wingy"
           click_button "Create Todo"
           visit project_path(project.id)
