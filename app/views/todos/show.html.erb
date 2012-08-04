@@ -2,16 +2,12 @@
   <div class="span3">
     <div class="well sidebar-nav">
       <ul class="nav nav-list">
-        <li><%= link_to 'Add Task', new_task_path %></li>
+        <li><%= link_to 'Add Task', new_task_path, class: 'add' %></li>
+        <li class="form"><%= render partial: "add_task", locals: {todo: @todo, task: @task} %></li>
       </ul>
     </div>
   </div>
-  <div class="span9">
-    <h2><%= @todo.name %></h2>
-    <ul class="nav nav-list projects">
-    <% @todo.tasks.each do |task| %>
-        <li class="well sidebar-nav"><p><%= task.description  %></p>created at <%= task.created_at %></li>
-    <% end %>
-    </ul>
+  <div class="span9 tasks">
+    <%= render partial: 'todo_tasks', locals: {todo: @todo} %>
   </div>
 </div>

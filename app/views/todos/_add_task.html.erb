@@ -1,0 +1,9 @@
+<%= form_for @todo.tasks.new, method: :post, remote: true do |f| %>
+  <p>
+    Add Task
+    <%= f.text_field :description, class: "task-description" %>
+    <%= f.hidden_field :created_by_id, value: current_user.id %>
+    <%= f.hidden_field :todo_id, value: @todo.id %>
+  </p>
+  <%= f.submit class: "btn btn-primary"%>
+<% end %>

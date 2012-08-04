@@ -1,0 +1,6 @@
+<h2>Projects</h2>
+<ul class="nav nav-list projects">
+  <% projects.each do |project| %>
+      <li class="well sidebar-nav"><p><%= link_to project.name, project_path(project) %></p><%= project.description %></li>
+  <% end %>
+</ul>

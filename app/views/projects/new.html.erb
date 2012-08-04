@@ -1,12 +1,2 @@
 <h2>New Project</h2>
-<%= form_for @user.projects.new do |f| %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </p>
-  <%= f.submit :class => "btn btn-primary" %>
-<% end %>
+<%= render partial: 'projects/project_form', locals: {user: @user, project: @project} %>
