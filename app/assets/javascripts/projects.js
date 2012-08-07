@@ -8,4 +8,8 @@ $(function() {
         $('.modal').modal('hide');
     });
 
+    $('.blocks').hover(function(){
+        $(this).find('.edit-buttons').toggleClass('visible');
+    });
+
 });

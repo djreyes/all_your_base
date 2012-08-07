@@ -1,9 +1,10 @@
 .blocks {
-    height: 100px;
+    height: 150px;
     width: 25%;
     padding-top: 2%;
     margin-right: 2%;
     float: left;
+    position: relative;
 }
 
 .form {
@@ -12,4 +13,14 @@
 
 .nav-list {
     padding-left: 0px;
+}
+
+.edit-buttons {
+    position:   absolute;
+    bottom:     0;
+    display: none;
+}
+
+.visible {
+    display: block;
 }
