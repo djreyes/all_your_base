@@ -1,3 +1,5 @@
 == All Your Base
 
 ...are belong to us.  Or, at least we got this sweet heroku url: http://all-your-base.herokuapp.com/
+
+It is meant to be a simple Basecamp clone.
